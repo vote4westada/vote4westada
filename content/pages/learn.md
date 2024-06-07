@@ -1,4 +1,11 @@
 Title: Learn
+Lead: Learn about why we support the West Ada School District
 
-West Ada has proposed a two-year *supplemental levy* of $13M, to replace the existing levy of $14M.  The goal is to fund 152 teachers and 29 Service Resource Officers.
 
+- No. 1 in Reading
+- No. 1 in Math
+- Extensive CTE Offerings
+- No Political or Social Agendas in the Classroom
+- Lowest Tax Burden in the Treasure Valley
+
+These are just a few reasons why we support our school district.
