@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="generator" content="Pelican" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Home{% endblock title %} | Vote 4 West Ada</title>
-    <meta name="description" content="{% block description %}Support Teachers, SROs, and Kids in West Ada.{% endblock description %}"/>
-    <meta property="og:url" content="{{ SITEURL }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{% block image %}logo.png{% endblock image %}" />
-    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/bootstrap.min.css" rel="stylesheet" >
-    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.png" rel="icon" type="image/x-icon" >
-    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ CSS_FILE }}" rel="stylesheet" />
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/bootstrap.bundle.min.js"></script>
-    {% if SITEURL == "https://www.vote4westada.com" %}
-      <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/posthog.js"></script>
-    {% endif %}
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/main.js"></script>
+    <title>{% block title %}Home{% endblock title %} | Vote for West Ada</title>
+    {% block meta %}
+      <meta charset="utf-8">
+      <meta name="generator" content="Pelican">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name='description' content="{% block description %}Supporting the West Ada School District.{% endblock description %}">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="{{ SITEURL }}">
+      <meta property="og:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{% block image %}logo.png{% endblock image %}">
+    {% endblock meta %}
     {% block styles %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/main.css">
     {% endblock styles %}
     {% block scripts %}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      {% if SITEURL == "https://www.vote4westada.com" %}
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/posthog.js"></script>
+      {% endif %}
+      <script type="application/ld+json" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/ld.json"></script>
+      <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/main.js"></script>
     {% endblock scripts %}
   </head>
   <body>
@@ -39,10 +42,10 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class='nav-item'>
-                    <a href='learn.html' class='nav-link {% block learnActive %}{% endblock learnActive %}'>Learn More</a>
+                    <a href='learn.html' class='nav-link {% if output_file=="learn.html" %}active{% endif %}'>Learn</a>
                   </li>
                   <li class='nav-item'>
-                    <a href='vote.html' class='nav-link {% block voteActive %}{% endblock voteActive %}'>Vote Now</a>
+                    <a href='vote.html' class='nav-link {% if output_file=="vote.html" %}active{% endif %}'>Vote</a>
                   </li>
                 </ul>
               </div>
@@ -57,12 +60,12 @@
 
     {% block footer %}
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container">
+        {#
         <ul class="nav col-md-4 justify-content-start">
-        {% for p in pages %}
           <li class="nav-item"><a href='{{p.url}}' class="nav-link {% if page==p %}active{% endif %}text-body-secondary">{{p.title}}</a></li>
-        {% endfor %}
         </ul>
-        <span class="mb-0 text-muted">&copy; 2024 Vote4WestAda</span>
+        #}
+        <span class="mb-0 text-muted">&copy; 2024 Vote for West Ada, Some Body Treasurer</span>
       </footer>
     {% endblock footer %}
   </body>

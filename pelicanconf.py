@@ -1,7 +1,8 @@
 # Core
-AUTHOR = 'Vote 4 West Ada'
-SITENAME = 'Vote 4 West Ada'
+AUTHOR = 'Author'
+SITENAME = 'Vote for West Ada'
 SITEURL = "http://localhost:8000"
+RELATIVE_URLS = False
 PATH = "content"
 TIMEZONE = 'America/Boise'
 DEFAULT_LANG = 'en'
@@ -19,7 +20,9 @@ USE_FOLDER_AS_CATEGORY = False
 
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight'
+        },
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
     },
@@ -41,6 +44,9 @@ DEFAULT_PAGINATION = False
 
 PLUGINS = [
     'plugins.bootstrapify',
+]
+
+ARTICLE_PATHS = [
 ]
 
 PAGE_URL = '{slug}.html'
